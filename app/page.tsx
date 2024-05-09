@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <>
-      <h1>home page</h1>
-      <Button>teste</Button>
+      <div className="mb-6">
+        <Header />
+      </div>
     </>
   );
 }
