@@ -6,6 +6,7 @@ export default function Home() {
       <div className="mb-6">
         <Header />
       </div>
+      <p>page home</p>
     </>
   );
 }

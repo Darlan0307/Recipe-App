@@ -28,10 +28,10 @@ const MenuMobile = () => {
         </div>
         <Separator className=" bg-muted-foreground" />
         <nav className="flex items-center gap-5 flex-col ">
-          <Link href="#" className="font-semibold hover:underline">
+          <Link href="/" className="font-semibold hover:underline">
             Home
           </Link>
-          <Link href="#" className="font-semibold hover:underline">
+          <Link href="/recipes" className="font-semibold hover:underline">
             Receitas
           </Link>
           <Link href="#" className="font-semibold hover:underline">
