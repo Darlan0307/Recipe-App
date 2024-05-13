@@ -11,6 +11,5 @@ export const FetchRecipesRandom = async (): Promise<RecipeType[]> => {
     const dataRecipe = (await data.meals[0]) as RecipeType;
     fetchedRecipes.push(dataRecipe);
   }
-  console.log("fez a requisição");
   return fetchedRecipes;
 };
