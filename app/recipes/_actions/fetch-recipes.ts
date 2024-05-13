@@ -1,4 +1,3 @@
-"use server";
 import { RecipeType } from "@/app/@types/RecipeType";
 
 export const FetchRecipesRandom = async (): Promise<RecipeType[]> => {
