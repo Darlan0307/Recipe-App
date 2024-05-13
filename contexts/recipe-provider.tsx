@@ -1,48 +1,23 @@
 "use client";
 
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { RecipeType } from "@/app/@types/RecipeType";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 interface ContextValues {
-  dataRecipes: any[];
+  recipesFavorites: RecipeType[];
 }
 
 export const RecipeContext = createContext({} as ContextValues);
 
 export const RecipeProvider = ({ children }: { children: ReactNode }) => {
-  const [dataRecipes, setDataRecipes] = useState<any[]>([]);
+  const [recipesFavorites, setRecipesFavorites] = useState<RecipeType[]>([]);
 
-  const FetchRecipesRandom = async () => {
-    try {
-      // for (let i = 0; i < 100; i++) {
-      //   const response = await fetch(
-      //     "https://www.themealdb.com/api/json/v1/1/random.php"
-      //   );
-      //   const data = await response.json();
-      //   setDataRecipes((prevState) => [...prevState, data]);
-      // }
-      const response = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/random.php"
-      );
-      const data = await response.json();
+  // Função para adicionar nos favoritos
 
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    FetchRecipesRandom();
-  }, []);
+  // Função para remover dos favoritos
 
   const values = {
-    dataRecipes,
+    recipesFavorites,
   };
 
   return (
