@@ -12,8 +12,8 @@ function Index() {
         <div className="mt-[250px] fire">
           <div className="text-white relative">
             <Image src={iconAbove} alt="Icon Above" width={160} height={160} className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full" />
-            <h1 className="text-5xl md:text-8xl font-Akronim font-bold mb-4 relative z-10 Blazing">SAVORS</h1>
-            <p className="text-lg md:text-xl font-dancing-script-chefathome">Chef at Home</p>
+            <h1 className="text-5xl md:text-8xl font-barlow-semi-condensed font-bold mb-4 relative z-10 Blazing" style={{ fontFamily: 'Barlow Semi Condensed, sans-serif' }}>SAVORS</h1>
+            <p className="text-lg md:text-xl font-dancing-script-chefathome" style={{ fontFamily: 'Dancing Script, cursive' }}>Chef at Home</p>
             <Image src={iconBelow} alt="Icon Below" width={80} height={80} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full" />
           </div>
         </div>

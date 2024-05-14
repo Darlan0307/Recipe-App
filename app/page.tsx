@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import Link from 'next/link';
-import Index from "./home";
+import Index from "./pages/home/index";
 
 export default function Home() {
   return (

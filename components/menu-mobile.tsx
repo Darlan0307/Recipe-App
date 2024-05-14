@@ -18,9 +18,9 @@ const MenuMobile = () => {
           <Menu size={30} />
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col justify-start gap-8">
+      <SheetContent className="font-barlow-semi-condensed flex flex-col justify-start gap-8">
         <SheetHeader>
-          <SheetTitle>Seja bem-vindo(a)!</SheetTitle>
+          <SheetTitle>Welcome 🤗!</SheetTitle>
         </SheetHeader>
         <div className="flex items-center justify-center gap-4 ">
           <Button>Login</Button>
@@ -32,14 +32,14 @@ const MenuMobile = () => {
             Home
           </Link>
           <Link href="/recipes" className="font-semibold hover:underline">
-            Receitas
+            Recipes
           </Link>
           <Link href="#" className="font-semibold hover:underline">
-            Análise
+            Analysis
           </Link>
         </nav>
         <Separator className=" bg-muted-foreground" />
-        <p>outras opções</p>
+        <p>Other options</p>
       </SheetContent>
     </Sheet>
   );

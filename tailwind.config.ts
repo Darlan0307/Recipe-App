@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "barlow-semi-condensed": ['"Barlow Semi Condensed"', "sans-serif"],
+        "dancing-script-chefathome": ['"Dancing Script"', "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
