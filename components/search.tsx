@@ -7,10 +7,10 @@ const Search = () => {
     <form className="flex relative w-full">
       <Input
         placeholder="🔎 Type here 🍳..."
-        className="font-barlow-semi-condensed shadow-lg text-lg"
+        className="shadow-lg text-lg"
       />
       <Button
-        className="font-barlow-semi-condensed absolute top-[50%] -translate-y-[50%] right-0"
+        className="absolute top-[50%] -translate-y-[50%] right-0"
         size="icon"
       >
         <SearchIcon />

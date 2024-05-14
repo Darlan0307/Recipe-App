@@ -4,15 +4,15 @@ import { Button } from "./ui/button";
 const MenuDesktop = () => {
   return (
     <div className="flex items-center gap-5 flex-auto">
-      <nav className="flex items-center gap-5 pr-5 border-r border-solid border-muted-foreground ">
+      <nav className="flex items-center gap-5 pr-5 border-r border-solid border-muted-foreground font-barlow-semi-condensed">
         <Link href="/" className="font-semibold hover:underline">
           Home
         </Link>
         <Link href="/recipes" className="font-semibold hover:underline">
-          Receitas
+          Recipes
         </Link>
         <Link href="#" className="font-semibold hover:underline">
-          Análise
+          Analysis
         </Link>
       </nav>
       <div className="flex items-center gap-4">
