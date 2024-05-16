@@ -18,7 +18,7 @@ const MenuMobile = () => {
           <Menu size={30} />
         </Button>
       </SheetTrigger>
-      <SheetContent className="font-barlow-semi-condensed flex flex-col justify-start gap-8">
+      <SheetContent className="flex flex-col justify-start gap-8">
         <SheetHeader>
           <SheetTitle>Welcome 🤗!</SheetTitle>
         </SheetHeader>

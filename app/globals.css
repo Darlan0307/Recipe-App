@@ -56,14 +56,15 @@
   body {
     @apply bg-background text-foreground;
   }
-  body
+  
   .barlow-semi-condensed-black-italic {
-    @apply font-barlow-semi-condensed;
+    font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 900;
     font-style: italic;
+    
   }
   .dancing-script-chefathome {
-    @apply font-family: "Dancing Script", cursive;
+    font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
