@@ -6,7 +6,7 @@ import MenuDesktop from "./menu-desktop";
 
 const Header = () => {
   return (
-    <header className="grid grid-cols-2 items-center gap-6 p-5 sm:grid-cols-3 lg:flex lg:justify-between lg:px-12">
+    <header className="grid grid-cols-2 items-center gap-6 p-5 sm:grid-cols-3 lg:flex lg:justify-between lg:px-12" >
       <div className="relative w-[100px] h-[100px]">
         <Link href="/">
           <Image src="/logo.png" alt="website logo" fill sizes="100%" />

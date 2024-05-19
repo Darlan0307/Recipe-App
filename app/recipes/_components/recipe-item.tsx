@@ -12,8 +12,8 @@ const RecipeItem = ({ recipe }: RecipeItemProps) => {
         src={recipe.strMealThumb || ""}
         alt={recipe.strMeal || ""}
         height={150}
-        width={200}
-        className="object-cover"
+        width={150}
+        className="rounded-3xl object-cover shadow-md"
       />
       <h3 className="max-w-[200px] overflow-hidden whitespace-nowrap text-ellipsis">
         {recipe.strMeal}

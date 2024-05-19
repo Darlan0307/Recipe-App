@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <form className="flex relative w-full">
       <Input
-        placeholder="Procure por receitas aqui..."
+        placeholder="🔎 Type here 🍳..."
         className="shadow-lg text-lg"
       />
       <Button

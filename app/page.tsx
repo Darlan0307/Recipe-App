@@ -1,4 +1,6 @@
 import Header from "@/components/header";
+import Link from 'next/link';
+import Index from "./pages/home/index";
 
 export default function Home() {
   return (
@@ -6,7 +8,11 @@ export default function Home() {
       <div className="mb-6">
         <Header />
       </div>
-      <p>page home</p>
+      <div>
+        <Link href="/">
+          <Index />
+        </Link>
+      </div>
     </>
   );
 }

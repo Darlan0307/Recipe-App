@@ -56,4 +56,29 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  .barlow-semi-condensed-black-italic {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    
+  }
+  .dancing-script-chefathome {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @keyframes Blazing {
+    0% {
+      text-shadow: 0 3px 20px red, 0 0 20px red, 0 0 10px orange, 0 0 0 yellow,
+        0 0 5px yellow, -2px -5px 5px yellow, 4px -10px 10px yellow;
+    }
+    /* Defina os outros pontos-chave da animação conforme necessário */
+  }
+
+  .Blazing {
+    animation: Blazing 2s infinite alternate linear;
+  }
 }

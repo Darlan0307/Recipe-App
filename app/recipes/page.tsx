@@ -8,7 +8,7 @@ const Recipes = () => {
   return (
     <div>
       <Header />
-      <p>page recipes</p>
+      <p className="flex justify-center">Page recipes</p>
       <RecipeList data={data} />
     </div>
   );
