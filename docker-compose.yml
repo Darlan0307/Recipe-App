@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: receitas
+    ports:
+      - "8000:8000"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/receitas?schema=public
+    depends_on:
+      - db
+    entrypoint: ["./wait-for-it.sh", "db:5432", "--", "npm", "run", "dev"]
+
+volumes:
+  postgres-data:
