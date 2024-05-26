@@ -1,0 +1,26 @@
+[debug] [2024-05-26T00:05:54.825Z] ----------------------------------------------------------------------
+[debug] [2024-05-26T00:05:54.826Z] Command:       /usr/local/share/nvm/versions/node/v20.13.1/bin/node /home/codespace/nvm/current/bin/firebase init
+[debug] [2024-05-26T00:05:54.827Z] CLI Version:   13.10.1
+[debug] [2024-05-26T00:05:54.827Z] Platform:      linux
+[debug] [2024-05-26T00:05:54.827Z] Node Version:  v20.13.1
+[debug] [2024-05-26T00:05:54.827Z] Time:          Sun May 26 2024 00:05:54 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-05-26T00:05:54.827Z] Env Overrides: GITHUB_API_URL
+[debug] [2024-05-26T00:05:54.827Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-26T00:05:54.831Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-26T00:05:54.831Z] > authorizing via signed-in user (thaysmoiaribeiro@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /workspaces/Recipe-App
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
