@@ -1,7 +1,6 @@
-// pages/home/Index.tsx
 import HeroSection from './HeroSection';
 
-function Index() {
+function Home() {
   return (
     <div>
       <HeroSection />
@@ -9,4 +8,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;

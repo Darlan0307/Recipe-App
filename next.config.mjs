@@ -1,15 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuração de redirecionamento
-  async redirects() {
-    return [
-      {
-        source: '/login',
-        destination: '/pages/login',
-        permanent: true,
-      },
-    ]
-  },
+  // images: {
+  //   remotePatterns: [{ hostname }],
+  // },
 };
 
 export default nextConfig;

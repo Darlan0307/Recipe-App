@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from "@/components/Header";
 import Link from 'next/link';
-import Index from "./pages/home/Index";
+import Index from "./pages/home/index";
 
 export default function Home() {
   return (
