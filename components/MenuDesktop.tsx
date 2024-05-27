@@ -16,10 +16,8 @@ const MenuDesktop = () => {
         </Link>
       </nav>
       <div className="flex items-center gap-4">
-      <Link href="/login">
-          <Button>Login</Button>
-      </Link>
-      <Button>Toggle theme</Button>
+        <Button>Login</Button>
+        <Button>Toggle theme</Button>
       </div>
     </div>
   );

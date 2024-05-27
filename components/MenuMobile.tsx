@@ -23,10 +23,8 @@ const MenuMobile = () => {
           <SheetTitle>Welcome 🤗!</SheetTitle>
         </SheetHeader>
         <div className="flex items-center justify-center gap-4 ">
-        <Link href="/login">
           <Button>Login</Button>
-        </Link>
-        <Button>Toggle theme</Button>
+          <Button>Toggle theme</Button>
         </div>
         <Separator className=" bg-muted-foreground" />
         <nav className="flex items-center gap-5 flex-col ">
