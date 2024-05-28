@@ -2,7 +2,8 @@
 import React from 'react';
 import Header from "@/components/Header";
 import Link from 'next/link';
-import Index from "./pages/home/index";
+import HeroSection from '@/components/HeroSection';
+import Login from '@/components/Login';
 
 export default function Home() {
   return (
@@ -12,7 +13,10 @@ export default function Home() {
       </div>
       <div>
         <Link href="/">
-          <Index />
+          <HeroSection />
+        </Link>
+        <Link href="/login">
+          <Login />
         </Link>
       </div>
     </>
