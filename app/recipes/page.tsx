@@ -1,7 +1,7 @@
 // pages/Recipes.tsx
 import React from 'react';
 import Header from '@/components/Header';
-import LoadingRecipesList from './LoadingRecipes';
+import LoadingRecipesList from '../../components/LoadingRecipes';
 
 function Recipes() {
   return (
