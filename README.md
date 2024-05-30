@@ -8,6 +8,14 @@ We are developing a web and mobile recipe platform with a blend of rustic and mo
 
 ## Installation
 
+- npm install
+ 
+ Necessary acess to Firebase to have the setting to use at the .env.local. The website give the steps to setting the project in Firebase Console: 
+ 
+- https://console.firebase.google.com/
+
+- npm install firebase
+
 
 ## Usage
 
