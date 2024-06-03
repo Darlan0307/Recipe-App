@@ -20,11 +20,12 @@ const LoginForm = () => {
         <div className="rounded-lg border shadow border-gray-200 p-7 mt-[-30px] w-full">
           <h1 className="text-3xl text-center font-bold mt-4 gap-2">Login</h1>
           <p className="text-gray-400 mt-4 text-center gap-2">Welcome to the login page!</p>
-          <br/>
+          <br />
           <form
             onSubmit={handleSubmit}
             autoComplete="off"
-            className="flex flex-col items-center gap-8">
+            className="flex flex-col items-center gap-8"
+          >
             <div>
               <label className="block mb-2">Email</label>
               <input
@@ -72,7 +73,7 @@ const LoginForm = () => {
               Login
             </button>
           </form>
-          <br/>
+          <br />
         </div>
       </div>
       <div className="relative my-3">
@@ -81,7 +82,7 @@ const LoginForm = () => {
           OR
         </span>
       </div>
-      <p className="mt-2 text-center  text-lg">
+      <p className="mt-2 text-center text-lg">
         Do not have an account,{" "}
         <a href="/signup" className="font-bold text-gray-600 underline">
           create now!

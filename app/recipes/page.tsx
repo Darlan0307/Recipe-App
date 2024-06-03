@@ -1,49 +1,51 @@
 import React from "react";
 import Header from "@/components/Header";
-import LoadingRecipesList from "../../components/LoadingRecipes";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Jantar from "@/public/jantar.jpg";
 import Jantar2 from "@/public/jantar2.jpg";
 import Pancakes from "@/public/pancakes.jpeg";
+import { FaHome, FaUser, FaBriefcase, FaChild, FaUtensils, FaCandyCane } from 'react-icons/fa';
+
+
 
 function Recipes() {
   return (
     <div>
       <Header />
       <div className="container mx-auto mt-8 px-4">
-        <div className="flex flex-col sm:flex-row justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8" style={{ marginLeft: '-800px' }}>
           {/* Left Column */}
-          <div className="flex flex-col items-center w-full sm:w-1/2">
-            <div className="flex items-center border p-3 rounded-lg shadow-md mb-4 max-w-xs w-full">
+          <div className="flex flex-col justify-center items-center sm:items-end">
+            <div className="border p-3 rounded-full shadow-md mb-4 w-40 h-40 relative">
               <Image
                 src={Jantar}
                 alt="Jantar"
-                width={100}
-                height={100}
-                className="w-16 h-16 sm:w-24 sm:h-24"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
               />
-              <div className="ml-3">
-                <h2 className="text-lg font-semibold">Pancakes1</h2>
-                <p className="text-sm text-gray-600">Preparation: 30 minutes</p>
+              <div className="absolute inset-x-0 bottom-0 p-2 text-white bg-black bg-opacity-50">
+                <h2 className="text-md font-semibold">Pancakes1</h2>
+                <p className="text-xs text-white">Preparation: 30 minutes</p>
               </div>
             </div>
-            <div className="flex items-center border p-3 rounded-lg shadow-md max-w-xs w-full">
+            <div className="border p-3 rounded-full shadow-md w-40 h-40 relative">
               <Image
                 src={Jantar2}
                 alt="Jantar2"
-                width={100}
-                height={100}
-                className="w-16 h-16 sm:w-24 sm:h-24"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
               />
-              <div className="ml-3">
-                <h2 className="text-lg font-semibold">Pancake2</h2>
-                <p className="text-sm text-gray-600">Preparation: 30 minutes</p>
+              <div className="absolute inset-x-0 bottom-0 p-2 text-white bg-black bg-opacity-50">
+                <h2 className="text-md font-semibold">Pancake2</h2>
+                <p className="text-xs text-white">Preparation: 30 minutes</p>
               </div>
             </div>
           </div>
           {/* Right Column */}
-          <div className="flex flex-col items-center w-full sm:w-1/2 text-center">
+          <div className="flex flex-col justify-center items-center sm:items-start">
             <p className="text-lg">Do not lose this amazing recipe</p>
             <h1 className="text-3xl font-bold mb-4 border-t-2">
               Recipes in Headlines
@@ -56,20 +58,38 @@ function Recipes() {
         </div>
 
         {/* Categories */}
-        <h1 className="text-xl text-center font-semibold mb-4 mt-8">
-          Category
-        </h1>
-        <div className="flex flex-wrap justify-center mt-4 space-x-2 space-y-2">
-          <Button>ALL</Button>
-          <Button>CHEF</Button>
-          <Button>KIDS</Button>
-          <Button>MEAT</Button>
-          <Button>SALAD</Button>
-          <Button>DOCES</Button>
+        <h1 className="text-xl text-center font-semibold mb-4 mt-4">Category</h1>
+        <div className="flex flex-wrap justify-center space-x-10 ">
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>ALL</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaHome/></span>
+          </button>
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>CHEF</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaUser /></span>
+          </button>
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>KIDS</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaBriefcase /></span>
+          </button>
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>MEAT</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaChild /></span>
+          </button>
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>SALAD</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaUtensils /></span>
+          </button>
+          <button className="group text-white bg-gradient-to-r from-red-400 via-red-500 to-orange-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex flex-col items-center">
+            <span>DOCES</span>
+            <span className="mt-1 transition-transform transform group-hover:translate-y-0"><FaCandyCane /></span>
+          </button>
         </div>
 
+
+
         {/* Welcome */}
-        <div className="text-center mt-8 flex flex-col items-center space-y-4">
+        <div className="text-center mt-8 space-y-4">
           <div className="inline-block bg-gray-200 p-2 rounded-full">👤</div>
           <p className="text-lg">
             Hi, User! Welcome to our incredible world of flavors. 😍 Enjoy! 🎉
@@ -84,8 +104,8 @@ function Recipes() {
               <Image
                 src={Pancakes}
                 alt="Pancakes"
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 className="w-16 h-16 sm:w-24 sm:h-24"
               />
               <div className="ml-3">
@@ -98,16 +118,14 @@ function Recipes() {
 
         {/* More Search */}
         <div className="mt-8">
-          <h3 className="text-xl text-center font-semibold mb-4">
-            More Search
-          </h3>
+          <h3 className="text-xl text-center font-semibold mb-4">More Search</h3>
           <div className="flex justify-center mt-4">
             <div className="flex items-center border p-3 rounded-lg shadow-md max-w-xs w-full">
               <Image
                 src={Pancakes}
                 alt="Pancakes"
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 className="w-16 h-16 sm:w-24 sm:h-24"
               />
               <div className="ml-3">
