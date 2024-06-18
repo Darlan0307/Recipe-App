@@ -1,8 +1,8 @@
 // pages/Home.tsx
-import React from 'react';
+import React from "react";
 import Header from "@/components/Header";
-import Link from 'next/link';
-import Index from "./pages/home/index";
+import Link from "next/link";
+import Index from "./pages/home";
 
 export default function Home() {
   return (
