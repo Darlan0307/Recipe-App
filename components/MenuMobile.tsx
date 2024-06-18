@@ -23,7 +23,7 @@ const MenuMobile = () => {
           <SheetTitle>Welcome 🤗!</SheetTitle>
         </SheetHeader>
         <div className="flex items-center justify-center gap-4 ">
-          <Button>Login</Button>
+          <Button><Link href="/login" >Login</Link></Button>
           <Button>Toggle theme</Button>
         </div>
         <Separator className=" bg-muted-foreground" />
