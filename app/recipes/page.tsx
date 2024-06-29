@@ -5,6 +5,8 @@ import { fetchRecipes } from "@/hooks/fetch-recipes";
 import { TypeRecipe } from "../@types/types-recipes";
 import ListButtons from "./_components/list-buttons";
 import CardRecipe from "./_components/card-recipe";
+import ListCards from "./_components/list-cards";
+import Image from "next/image";
 
 async function Recipes() {
   const recipes = await fetchRecipes();
@@ -14,20 +16,32 @@ async function Recipes() {
   }
 
   let randomRecipe1: TypeRecipe = await recipes.data[randomIndex()];
-  let randomRecipe2: TypeRecipe = await recipes.data[randomIndex()];
 
   return (
     <div>
       <Header />
       <div className="container mx-auto mt-8 px-4">
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8"
-          style={{ marginLeft: "-1005px" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {/* Left Column */}
           <div className="flex flex-col justify-center items-center sm:items-end">
-            <CardRecipe recipe={randomRecipe1} />
-            <CardRecipe recipe={randomRecipe2} />
+            <article className="border p-3 shadow-md mb-4 w-full max-w-[400px] aspect-square relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
+              <Image
+                src={randomRecipe1.urlImage}
+                alt={randomRecipe1.name}
+                sizes="(min-width: 768px) 500px, 100vw"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-2 text-white  bg-opacity-55 bg-black">
+                <h2 className="text-lg font-semibold text-nowrap text-ellipsis max-w-36 text-center overflow-hidden">
+                  {randomRecipe1.name}
+                </h2>
+                <p className="text-xs text-white font-semibold">
+                  {randomRecipe1.cookTimer}
+                </p>
+              </div>
+            </article>
           </div>
           <div className="flex flex-col justify-center items-center sm:items-start p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
             <p className="text-lg text-orange-600 font-semibold mb-2 animate-bounce">
@@ -55,6 +69,10 @@ async function Recipes() {
           <p className="text-lg">
             Hi, User! Welcome to our incredible world of flavors. 😍 Enjoy! 🎉
           </p>
+        </div>
+
+        <div className="mt-6">
+          <ListCards dataRecipes={recipes.data} />
         </div>
 
         {/* Chat and Notes Button */}
