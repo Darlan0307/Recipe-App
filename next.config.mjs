@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // images: {
-  //   remotePatterns: [{ hostname }],
-  // },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "www.receiteria.com.br" }],
+  },
 };
 
 export default nextConfig;
