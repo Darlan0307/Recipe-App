@@ -6,14 +6,23 @@ import { TypeRecipe } from "../@types/types-recipes";
 import ListButtons from "./_components/list-buttons";
 import ListCards from "./_components/list-cards";
 import Image from "next/image";
+import ButtonPagination from "./_components/button-pagination";
 
-async function Recipes() {
+const ITEMS_PER_PAGE = 10;
+
+const Recipes = async ({ searchParams }: { searchParams: { page?: string } }) => {
+  const page = parseInt(searchParams.page as string) || 1;
+
   // Fetch recipes
   const { data } = await fetchRecipes();
 
-  // Select a random recipe
+  // Pagination logic
+  const startIndex = (page - 1) * ITEMS_PER_PAGE;
+  const currentItems = data.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+
   const randomIndex = () => Math.floor(Math.random() * data.length);
-  const randomRecipe: TypeRecipe = data[randomIndex()];
+  const randomRecipe = data[randomIndex()];
 
   return (
     <div>
@@ -78,6 +87,8 @@ async function Recipes() {
         <div className="mt-6">
           <ListCards dataRecipes={data} />
         </div>
+
+        <ButtonPagination currentPage={page} totalPages={totalPages} />
 
         {/* Chat and Notes Buttons */}
         <div className="text-center mt-8 flex items-center  justify-center space-x-4">
