@@ -1,5 +1,6 @@
 import { TypeRecipe } from "@/app/@types/types-recipes";
 import Image from "next/image";
+import Link from "next/link";
 
 type CardProps = {
   recipe: TypeRecipe;
@@ -7,7 +8,10 @@ type CardProps = {
 
 const CardRecipe = ({ recipe }: CardProps) => {
   return (
-    <article className="border p-3 shadow-md mb-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-58 relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
+    <Link
+      href={`/recipes/${recipe.id}`}
+      className="border p-3 shadow-md mb-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-58 relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer"
+    >
       <Image
         src={recipe.urlImage}
         alt={recipe.name}
@@ -22,7 +26,7 @@ const CardRecipe = ({ recipe }: CardProps) => {
         </h2>
         <p className="text-xs text-white font-semibold">{recipe.cookTimer}</p>
       </div>
-    </article>
+    </Link>
   );
 };
 
