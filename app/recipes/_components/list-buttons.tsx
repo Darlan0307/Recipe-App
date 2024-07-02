@@ -10,7 +10,7 @@ const arrButtons = [
 
 const ListButtons = () => {
   return (
-    <div className="flex flex-wrap justify-center space-x-10">
+    <div className="flex flex-wrap justify-center gap-6">
       {arrButtons.map((button, index) => (
         <ButtonFilter key={index} link={button.link} text={button.text} />
       ))}

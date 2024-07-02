@@ -7,7 +7,7 @@ type CardProps = {
 
 const CardRecipe = ({ recipe }: CardProps) => {
   return (
-    <article className="border p-3 shadow-md mb-4 w-40 h-40 relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
+    <article className="border p-3 shadow-md mb-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-58 relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
       <Image
         src={recipe.urlImage}
         alt={recipe.name}
