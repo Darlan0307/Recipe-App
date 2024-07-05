@@ -1,28 +1,26 @@
 import React from "react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { fetchRecipes } from "@/hooks/fetch-recipes";
-import { TypeRecipe } from "../@types/types-recipes";
+import { fetchRecipes, FiltersRecipes } from "@/hooks/fetch-recipes";
 import ListButtons from "./_components/list-buttons";
 import ListCards from "./_components/list-cards";
 import Image from "next/image";
-import ButtonPagination from "./_components/button-pagination";
+import ButtonPagination from "../../components/ButtonPagination";
 
-const ITEMS_PER_PAGE = 10;
-
-const Recipes = async ({ searchParams }: { searchParams: { page?: string } }) => {
-  const page = parseInt(searchParams.page as string) || 1;
+const Recipes = async () => {
+  const teste: FiltersRecipes = {
+    category: "",
+    limit: "",
+    name: "",
+    page: 1,
+  };
 
   // Fetch recipes
-  const { data } = await fetchRecipes();
+  const responseData = await fetchRecipes(teste);
 
-  // Pagination logic
-  const startIndex = (page - 1) * ITEMS_PER_PAGE;
-  const currentItems = data.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-
-  const randomIndex = () => Math.floor(Math.random() * data.length);
-  const randomRecipe = data[randomIndex()];
+  const randomIndex = () =>
+    Math.floor(Math.random() * responseData.data.length);
+  const randomRecipe = responseData.data[randomIndex()];
 
   return (
     <div>
@@ -85,10 +83,10 @@ const Recipes = async ({ searchParams }: { searchParams: { page?: string } }) =>
         </div>
 
         <div className="mt-6">
-          <ListCards dataRecipes={data} />
+          <ListCards dataRecipes={responseData.data} />
         </div>
 
-        <ButtonPagination currentPage={page} totalPages={totalPages} />
+        <ButtonPagination typeRecipePage={responseData} />
 
         {/* Chat and Notes Buttons */}
         <div className="text-center mt-8 flex items-center  justify-center space-x-4">
@@ -98,6 +96,6 @@ const Recipes = async ({ searchParams }: { searchParams: { page?: string } }) =>
       </div>
     </div>
   );
-}
+};
 
 export default Recipes;
