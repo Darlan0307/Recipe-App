@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { fetchRecipes, FiltersRecipes } from "@/hooks/fetch-recipes";
@@ -6,48 +7,67 @@ import ListButtons from "./_components/list-buttons";
 import ListCards from "./_components/list-cards";
 import Image from "next/image";
 import ButtonPagination from "../../components/ButtonPagination";
+import { TypeRecipeResponse } from "../@types/types-recipes";
 
-const Recipes = async () => {
-  const teste: FiltersRecipes = {
+const Recipes = () => {
+  const [filters, setFilters] = useState<FiltersRecipes>({
     category: "",
-    limit: "",
+    limit: "10",
     name: "",
     page: 1,
+  });
+
+  const [responseData, setResponseData] = useState<TypeRecipeResponse | null>(
+    null
+  );
+
+  const updateFilter = (
+    field: keyof FiltersRecipes,
+    value: string | number
+  ) => {
+    setFilters((prev) => ({ ...prev, [field]: value }));
   };
 
-  // Fetch recipes
-  const responseData = await fetchRecipes(teste);
+  const fetchAndUpdateRecipes = async () => {
+    const data = await fetchRecipes(filters);
+    setResponseData(data);
+  };
+
+  useEffect(() => {
+    fetchAndUpdateRecipes();
+  }, [filters]);
 
   const randomIndex = () =>
-    Math.floor(Math.random() * responseData.data.length);
-  const randomRecipe = responseData.data[randomIndex()];
-
+    Math.floor(Math.random() * (responseData?.data.length || 1));
+  const randomRecipe = responseData ? responseData.data[randomIndex()] : null;
   return (
     <div>
       <Header />
       <div className="my-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-5 lg:px-12">
           {/* Recipe Card */}
-          <div className="flex flex-col justify-center items-center sm:items-end">
-            <article className="border p-3 shadow-md mb-4 w-full max-w-[400px] aspect-square lg:max-w-none lg:aspect-video relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
-              <Image
-                src={randomRecipe.urlImage}
-                alt={randomRecipe.name}
-                sizes="(min-width: 768px) 500px, 100vw"
-                fill
-                priority
-                className="object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 p-2 text-white bg-opacity-55 bg-black">
-                <h2 className="text-lg font-semibold text-center overflow-hidden text-ellipsis">
-                  {randomRecipe.name}
-                </h2>
-                <p className="text-lg text-white font-semibold">
-                  {randomRecipe.cookTimer}
-                </p>
-              </div>
-            </article>
-          </div>
+          {randomRecipe && (
+            <div className="flex flex-col justify-center items-center sm:items-end">
+              <article className="border p-3 shadow-md mb-4 w-full max-w-[400px] aspect-square lg:max-w-none lg:aspect-video relative transition-transform transform hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden cursor-pointer">
+                <Image
+                  src={randomRecipe.urlImage}
+                  alt={randomRecipe.name}
+                  sizes="(min-width: 768px) 500px, 100vw"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-2 text-white bg-opacity-55 bg-black">
+                  <h2 className="text-lg font-semibold text-center overflow-hidden text-ellipsis">
+                    {randomRecipe.name}
+                  </h2>
+                  <p className="text-lg text-white font-semibold">
+                    {randomRecipe.cookTimer}
+                  </p>
+                </div>
+              </article>
+            </div>
+          )}
 
           {/* Welcome Section */}
           <div className="flex flex-col justify-center items-center row-start-1 sm:row-start-auto sm:items-start p-5 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl lg:max-w-none lg:aspect-video">
@@ -83,10 +103,19 @@ const Recipes = async () => {
         </div>
 
         <div className="mt-6">
-          <ListCards dataRecipes={responseData.data} />
+          {responseData ? (
+            <ListCards dataRecipes={responseData.data} />
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
 
-        <ButtonPagination typeRecipePage={responseData} />
+        {responseData && (
+          <ButtonPagination
+            typeRecipePage={responseData}
+            updateFilter={updateFilter}
+          />
+        )}
 
         {/* Chat and Notes Buttons */}
         <div className="text-center mt-8 flex items-center  justify-center space-x-4">
