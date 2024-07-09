@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { fetchRecipes, FiltersRecipes } from "@/hooks/fetch-recipes";
@@ -28,14 +28,14 @@ const Recipes = () => {
     setFilters((prev) => ({ ...prev, [field]: value }));
   };
 
-  const fetchAndUpdateRecipes = async () => {
+  const fetchAndUpdateRecipes = useCallback(async () => {
     const data = await fetchRecipes(filters);
     setResponseData(data);
-  };
+  }, [filters]);
 
   useEffect(() => {
     fetchAndUpdateRecipes();
-  }, [filters]);
+  }, [filters, fetchAndUpdateRecipes]);
 
   const randomIndex = () =>
     Math.floor(Math.random() * (responseData?.data.length || 1));
