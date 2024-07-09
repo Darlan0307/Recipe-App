@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { getRecipeId } from "@/hooks/get-recipe-id";
-import { Forklift, PlaneTakeoff, Soup, Timer } from "lucide-react";
+import {  Soup, Timer } from "lucide-react";
 import Image from "next/image";
 
 interface RecipePageProps {

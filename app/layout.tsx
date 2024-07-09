@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head><script src="https://cdn.lordicon.com/lordicon.js"></script></head>
+      <head>
+        <script async src="https://cdn.lordicon.com/lordicon.js"></script>
+      </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
