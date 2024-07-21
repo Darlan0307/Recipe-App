@@ -8,6 +8,9 @@ import ListCards from "./_components/list-cards";
 import Image from "next/image";
 import ButtonPagination from "../../components/ButtonPagination";
 import { TypeRecipeResponse } from "../@types/types-recipes";
+import Link from 'next/link';
+import NotePopup from "./_components/note-popup";
+
 
 const Recipes = () => {
   const [filters, setFilters] = useState<FiltersRecipes>({
@@ -118,10 +121,12 @@ const Recipes = () => {
         )}
 
         {/* Chat and Notes Buttons */}
-        <div className="text-center mt-8 flex items-center  justify-center space-x-4">
+        <div className="text-center mt-8 flex items-center justify-center space-x-4">
+        <Link href="../login">
           <Button>Chat...</Button>
-          <Button>Notes</Button>
-        </div>
+        </Link>
+        <NotePopup />
+      </div>
       </div>
     </div>
   );
