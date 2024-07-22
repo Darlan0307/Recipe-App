@@ -2,6 +2,8 @@
 import Image from "next/image";
 import iconAbove from "@/public/hat.png";
 import iconBelow from "@/public/rail.png";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -15,7 +17,7 @@ function HeroSection() {
       />
       <div className="overlay h-[100%] w-[100%] absolute inset-0 bg-black opacity-50" />
 
-      <div className="mt-[-50px] content absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center">
+      <div className="mt-[-120px] content absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 text-center">
         <div className="mt-[250px] fire">
           <div className="text-white relative">
             <Image
@@ -40,10 +42,9 @@ function HeroSection() {
             />
           </div>
         </div>
-
-        <div className="w-[8em] h-[3em] mt-[100%] p-2 font-semibold rounded-3xl ml-[25%] flex justify-center z-1 border-solid border-2 bg-white md:ml-[37%] md:mt-[50%] cursor-pointer shadow-md hover:bg-gray-100 text-black">
-          Learn More
-        </div>
+        <Link href="/about">
+          <Button className="w-[8em] h-[3em] mt-[60%] p-2 font-semibold rounded-3xl ml-[25%] flex justify-center z-1 border-solid border-2 bg-white md:ml-[37%] md:mt-[50%] cursor-pointer shadow-md hover:bg-gray-100 text-black" variant="default">Learn More</Button>
+        </Link>
       </div>
     </div>
   );
