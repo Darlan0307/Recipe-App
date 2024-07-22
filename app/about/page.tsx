@@ -49,12 +49,12 @@ const AboutPage = () => {
             <div className="flex flex-col items-center">
               <Link href="https://thaysribeiromaher.netlify.app/">
                 <Button className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 ease-in-out mb-4">
-                  Thays's GitHub
+                  Thays&apos;s GitHub
                 </Button>
               </Link>
               <Link href="https://projecthubdarlan.netlify.app/">
                 <Button className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 ease-in-out">
-                  Darlan's GitHub
+                  Darlan&apos;s GitHub
                 </Button>
               </Link>
             </div>
