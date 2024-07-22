@@ -9,6 +9,7 @@ import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 const MenuMobile = () => {
   return (
@@ -23,8 +24,10 @@ const MenuMobile = () => {
           <SheetTitle>Welcome 🤗!</SheetTitle>
         </SheetHeader>
         <div className="flex items-center justify-center gap-4 ">
-          <Button><Link href="/login" >Login</Link></Button>
-          <Button>Toggle theme</Button>
+          <Button className="text-white">
+            <Link href="/login">Login</Link>
+          </Button>
+          <ToggleThemeButton variant="ghost" size="default" />
         </div>
         <Separator className=" bg-muted-foreground" />
         <nav className="flex items-center gap-5 flex-col ">

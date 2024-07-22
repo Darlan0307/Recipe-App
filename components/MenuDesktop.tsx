@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 const MenuDesktop = () => {
   return (
@@ -16,10 +17,10 @@ const MenuDesktop = () => {
         </Link>
       </nav>
       <div className="flex items-center gap-4">
-        <Button>
+        <Button className="text-white">
           <Link href="/login" >Login</Link>
         </Button>
-        <Button>Toggle theme</Button>
+        <ToggleThemeButton variant="ghost" size="default" />
       </div>
     </div>
   );

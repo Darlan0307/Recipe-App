@@ -8,9 +8,8 @@ import ListCards from "./_components/list-cards";
 import Image from "next/image";
 import ButtonPagination from "../../components/ButtonPagination";
 import { TypeRecipeResponse } from "../@types/types-recipes";
-import Link from 'next/link';
+import Link from "next/link";
 import NotePopup from "./_components/note-popup";
-
 
 const Recipes = () => {
   const [filters, setFilters] = useState<FiltersRecipes>({
@@ -74,16 +73,16 @@ const Recipes = () => {
 
           {/* Welcome Section */}
           <div className="flex flex-col justify-center items-center row-start-1 sm:row-start-auto sm:items-start p-5 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl lg:max-w-none lg:aspect-video">
-            <p className=" text-orange-600 font-semibold mb-2 animate-bounce text-center sm:text-left  sm:text-lg">
+            <p className=" text-blue-500 font-semibold mb-2 animate-bounce text-center sm:text-left  sm:text-lg">
               Do not lose this amazing recipe
             </p>
-            <h1 className="text-xl font-bold mb-4 pt-4 border-t-2 border-orange-500 text-center sm:text-left sm:text-3xl">
+            <h1 className="text-xl font-bold mb-4 pt-4 border-t-2 border-blue-500 text-center text-black sm:text-left sm:text-3xl">
               Recipes in Headlines
             </h1>
             <p className="text-gray-600 mb-4 text-center sm:text-left sm:text-lg">
               Welcome to the recipes page!
             </p>
-            <button className="mt-2 px-6 py-3 border rounded-full bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold hover:bg-gradient-to-l hover:from-orange-500 hover:to-orange-600 transition-colors">
+            <button className="mt-2 px-6 py-3 border rounded-full bg-gradient-to-r  from-blue-400 to-blue-500 text-white font-bold hover:bg-gradient-to-l hover:from-blue-500 hover:to-blue-600 transition-colors">
               Access Now
             </button>
           </div>
@@ -122,11 +121,11 @@ const Recipes = () => {
 
         {/* Chat and Notes Buttons */}
         <div className="text-center mt-8 flex items-center justify-center space-x-4">
-        <Link href="../login">
-          <Button>Chat...</Button>
-        </Link>
-        <NotePopup />
-      </div>
+          <Link href="../login">
+            <Button>Chat...</Button>
+          </Link>
+          <NotePopup />
+        </div>
       </div>
     </div>
   );
